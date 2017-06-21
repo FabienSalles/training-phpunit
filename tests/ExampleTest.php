@@ -1,8 +1,10 @@
 <?php
 
-namespace League\Skeleton;
+namespace Training\PHPUnit;
 
-class ExampleTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ExampleTest extends TestCase
 {
     /**
      * Test that true does in fact equal true
