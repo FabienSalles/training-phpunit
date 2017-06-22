@@ -2,7 +2,7 @@
 
 namespace Training\PHPUnit;
 
-class SkeletonClass
+class Skeleton
 {
     /**
      * Create a new Skeleton Instance
