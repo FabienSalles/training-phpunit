@@ -24,4 +24,31 @@ class MathTest extends TestCase
     {
         $this->assertSame((float) 0, $this->math->getNumber());
     }
+
+    public function testSumNumber()
+    {
+        $this->math->sum(2);
+        $this->assertSame((float) 2, $this->math->getNumber());
+    }
+
+    public function testSubstractNumber()
+    {
+        $this->math->sum(2);
+        $this->math->substract(1);
+        $this->assertSame((float) 1, $this->math->getNumber());
+    }
+
+    public function testDivideNumber()
+    {
+        $this->math->sum(6);
+        $this->math->divide(2);
+        $this->assertSame((float) 3, $this->math->getNumber());
+    }
+
+    public function testMultiplyNumber()
+    {
+        $this->math->sum(5);
+        $this->math->multiply(4);
+        $this->assertSame((float) 20, $this->math->getNumber());
+    }
 }
