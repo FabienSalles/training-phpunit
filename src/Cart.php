@@ -29,7 +29,7 @@ class Cart
 
         if (100 < $price->getNumber()) {
             $price->sum(self::SHIPPING_PRICE_LESS_THAN_100);
-        } elseif (100 === $price->getNumber()) {
+        } elseif (100 == $price->getNumber()) {
             $price->sum(self::SHIPPING_PRICE_EQUAL_TO_100);
         } else {
             $price->sum(self::SHIPPING_PRICE_GREATER_THAN_100);

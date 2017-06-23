@@ -10,6 +10,8 @@ class Math
     /** @var float */
     protected $number;
 
+    const SCALE = 10;
+
     public function __construct(float $number = 0.0)
     {
         $this->number = $number;
@@ -17,14 +19,14 @@ class Math
 
     public function sum(float $number)
     {
-        $this->number += $number;
+        $this->number = (float) bcadd((string) $this->number, (string) $number, self::SCALE);
 
         return $this;
     }
 
     public function substract(float $number)
     {
-        $this->number -= $number;
+        $this->number = (float) bcsub((string) $this->number, (string) $number, self::SCALE);
 
         return $this;
     }
@@ -36,14 +38,14 @@ class Math
 
     public function divide(float $number)
     {
-        $this->number /= $number;
+        $this->number = (float) bcdiv((string) $this->number, (string) $number, self::SCALE);
 
         return $this;
     }
 
     public function multiply(float $number)
     {
-        $this->number *= $number;
+        $this->number = (float) bcmul((string) $this->number, (string) $number, self::SCALE);
     }
 }
 

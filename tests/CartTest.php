@@ -20,4 +20,14 @@ class CartTest extends TestCase
         ]);
         $this->assertSame((float) 101, $cart->getProductCartPrices());
     }
+
+    public function testProductCartPriceWithFloatingPrecision()
+    {
+        $cart = new Cart([
+            new Product('un produit', 80.1),
+            new Product('un 2ème produit',10.1),
+            new Product('un 3ème', 9.8),
+        ]);
+        $this->assertSame((float) 115, $cart->getProductCartPrices());
+    }
 }
