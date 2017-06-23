@@ -25,10 +25,23 @@ class MathTest extends TestCase
         $this->assertSame((float) 0, $this->math->getNumber());
     }
 
-    public function testSumNumber()
+    /**
+     * @dataProvider sumProvider
+     */
+    public function testSumNumber(float $firstNum, float $secondNum, float $result)
     {
-        $this->math->sum(2);
-        $this->assertSame((float) 2, $this->math->getNumber());
+        $this->math->sum($firstNum);
+        $this->math->sum($secondNum);
+        $this->assertSame($result, $this->math->getNumber());
+    }
+
+    public function sumProvider()
+    {
+        return [
+            [1, 2, 3],
+            [2.50, 4.50, 7],
+            [10.88, 20.12, 31]
+        ];
     }
 
     public function testSubstractNumber()
