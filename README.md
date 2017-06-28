@@ -7,10 +7,12 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```Fabien Salles``` ```FabienSalles``` ```https://github.com/FabienSalles``` ```fsalles@clever-age.com``` ```FabienSalles``` ```training-phpunit``` `````` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
+Branche :
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+* [Day1/02Math](https://github.com/FabienSalles/training-phpunit/tree/Day1/02Math) : Exercice Math
+* [Day1/03ProductCart](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart) : Exercice ProductCart 1 & 2
+* [Day1/03ProductCart_Step2](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step2) : Exercice ProductCart 3
+* [Day1/03ProductCart_Step3](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step3) : Amélioration : Correction et Utilisation des Mocks
 
 ## Structure
 
@@ -25,20 +27,7 @@ vendor/
 ```
 
 
-## Install
 
-Via Composer
-
-``` bash
-$ composer require FabienSalles/training-phpunit
-```
-
-## Usage
-
-``` php
-$skeleton = new Training\PHPUnit();
-echo $skeleton->echoPhrase('Hello, League!');
-```
 
 ## Change log
 
