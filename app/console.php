@@ -1,8 +1,8 @@
 <?php
 
-use Training\PHPUnit\NumbersAPIClient;
+use Training\PHPUnit\NumbersAPIInterface;
 
 $container = require __DIR__ . '/bootstrap.php';
 
-$content = $container->get(NumbersAPIClient::class)->trivia(1234565432);
+$content = $container->get(NumbersAPIInterface::class)->trivia(1234565432);
 echo $content;

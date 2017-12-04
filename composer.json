@@ -18,6 +18,7 @@
     ],
     "require": {
         "php": "~7.0",
+        "monolog/monolog": "^1.23",
         "php-di/php-di": "^5.4"
     },
     "require-dev": {

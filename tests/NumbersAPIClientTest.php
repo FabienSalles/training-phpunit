@@ -9,10 +9,22 @@
 namespace Training\PHPUnit;
 
 use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 
 class NumbersAPIClientTest extends TestCase
 {
     const TRIVIA_NUMBER = 12345321;
+
+    /** @var  NumbersAPIInterface */
+    private $client;
+
+    public function setUp()
+    {
+        $this->client = $this->getMockBuilder(NumbersAPIClient::class)
+            ->setConstructorArgs(['http://numbersapi.com', new NullLogger()])
+            ->setMethods()
+            ->getMock();
+    }
 
     public function testTriviaAPI()
     {
@@ -23,14 +35,13 @@ class NumbersAPIClientTest extends TestCase
             sprintf('%d is an uninteresting number.', self::TRIVIA_NUMBER),
             sprintf('%d is a number for which we\'re missing a fact (submit one to numbersapi at google mail!).', self::TRIVIA_NUMBER),
         ];
-        $client = new NumbersAPIClient();
-        $this->assertContains($client->trivia(self::TRIVIA_NUMBER), $results);
+
+        $this->assertContains($this->client->trivia(self::TRIVIA_NUMBER), $results);
     }
     
     public function testGetUrl()
     {
-        $client = new NumbersAPIClient();
-        $this->assertSame($client->getTriviaUrl(self::TRIVIA_NUMBER), sprintf('http://numbersapi.com/%d', self::TRIVIA_NUMBER));
+        $this->assertSame($this->client->getTriviaUrl(self::TRIVIA_NUMBER), sprintf('http://numbersapi.com/%d', self::TRIVIA_NUMBER));
     }
 
     public function testTriviaAPIWithMock()

@@ -8,18 +8,25 @@
 
 namespace Training\PHPUnit;
 
+use Psr\Log\LoggerInterface;
+
 class NumbersAPIClient implements NumbersAPIInterface
 {
     private $baseUrl;
+    /** @var  LoggerInterface */
+    private $logger;
 
-    public function __construct(string $baseUrl = 'http://numbersapi.com')
+    public function __construct(string $baseUrl, LoggerInterface $logger)
     {
         $this->baseUrl = $baseUrl;
+        $this->logger = $logger;
     }
 
     public function trivia(int $number): string
     {
-        return file_get_contents($this->getTriviaUrl($number));
+        $content = file_get_contents($this->getTriviaUrl($number));
+        $this->logger->notice($content);
+        return $content;
     }
 
     public function math(int $number): string
