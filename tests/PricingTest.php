@@ -20,7 +20,13 @@ class PricingTest extends TestCase
             ->method('getProductCartPrices')
             ->willReturn(90.5);
 
-        $pricing = new Pricing(new Math(), $cart);
+        $math = $this->createMock(Math::class);
+        $math->expects($this->once())
+            ->method('sum')
+            ->with(90.5, 15.5)
+            ->willReturn(106);
+
+        $pricing = new Pricing($math, $cart);
         $this->assertSame((float) 106, $pricing->getTotalPrice());
     }
 
@@ -32,7 +38,13 @@ class PricingTest extends TestCase
             ->method('getProductCartPrices')
             ->willReturn(100.0);
 
-        $pricing = new Pricing(new Math(), $cart);
+        $math = $this->createMock(Math::class);
+        $math->expects($this->once())
+            ->method('sum')
+            ->with(100, 15)
+            ->willReturn(115);
+
+        $pricing = new Pricing($math, $cart);
         $this->assertSame((float) 115, $pricing->getTotalPrice());
     }
 
@@ -44,7 +56,13 @@ class PricingTest extends TestCase
             ->method('getProductCartPrices')
             ->willReturn(100.1);
 
-        $pricing = new Pricing(new Math(), $cart);
+        $math = $this->createMock(Math::class);
+        $math->expects($this->once())
+            ->method('sum')
+            ->with(100.1, 10)
+            ->willReturn(110.1);
+
+        $pricing = new Pricing($math, $cart);
         $this->assertSame((float) 110.1, $pricing->getTotalPrice());
     }
 }
