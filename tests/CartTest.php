@@ -14,10 +14,13 @@ class CartTest extends TestCase
 {
     public function testGetProductCartPrice(): void
     {
-        $cart = new Cart([
-            new Product('un produit', 10.90),
-            new Product('un 2ème produit',80.10),
-        ]);
+        $cart = new Cart(
+            new Math(),
+            [
+                new Product('un produit', 10.90),
+                new Product('un 2ème produit',80.10),
+            ]
+        );
 
         $this->assertSame((float) 91, $cart->getProductCartPrices());
     }

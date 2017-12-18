@@ -9,20 +9,24 @@ class Cart
 {
     /** @var  Product[] */
     private $products;
+
+    /** @var Math */
+    private $math;
     
-    public function __construct(array $products)
+    public function __construct(Math $math, array $products)
     {
+        $this->math = $math;
         $this->products = $products;
     }
 
     public function getProductCartPrices(): float
     {
-        $price = new Math();
+        $price = 0;
 
         foreach ($this->products as $product) {
-            $price->sum($product->getPrice());
+            $price = $this->math->sum($price, $product->getPrice());
         }
 
-        return $price->getNumber();
+        return $price;
     }
 }

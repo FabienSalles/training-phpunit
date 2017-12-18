@@ -20,7 +20,7 @@ class PricingTest extends TestCase
             ->method('getProductCartPrices')
             ->willReturn(90.5);
 
-        $pricing = new Pricing($cart);
+        $pricing = new Pricing(new Math(), $cart);
         $this->assertSame((float) 106, $pricing->getTotalPrice());
     }
 
@@ -32,7 +32,7 @@ class PricingTest extends TestCase
             ->method('getProductCartPrices')
             ->willReturn(100.0);
 
-        $pricing = new Pricing($cart);
+        $pricing = new Pricing(new Math(), $cart);
         $this->assertSame((float) 115, $pricing->getTotalPrice());
     }
 
@@ -44,7 +44,7 @@ class PricingTest extends TestCase
             ->method('getProductCartPrices')
             ->willReturn(100.1);
 
-        $pricing = new Pricing($cart);
+        $pricing = new Pricing(new Math(), $cart);
         $this->assertSame((float) 110.1, $pricing->getTotalPrice());
     }
 }

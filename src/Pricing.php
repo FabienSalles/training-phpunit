@@ -13,12 +13,16 @@ class Pricing
     /** @var  Cart */
     protected $productCart;
 
+    /** @var  Math */
+    protected $math;
+
     const SHIPPING_PRICE_LESS_THAN_100 = 15.5;
     const SHIPPING_PRICE_EQUAL_TO_100 = 15;
     const SHIPPING_PRICE_GREATER_THAN_100 = 10;
 
-    public function __construct(Cart $productCart)
+    public function __construct(Math $math, Cart $productCart)
     {
+        $this->math = $math;
         $this->productCart = $productCart;
     }
 
@@ -29,16 +33,17 @@ class Pricing
 
     public function getTotalPrice() : float
     {
-        $price = new Math($this->productCart->getProductCartPrices());
+        $price = $this->productCart->getProductCartPrices();
+        $shippingPrice = null;
 
-        if (100 > $price->getNumber()) {
-            $price->sum(self::SHIPPING_PRICE_LESS_THAN_100);
-        } elseif (100 == $price->getNumber()) {
-            $price->sum(self::SHIPPING_PRICE_EQUAL_TO_100);
+        if (100 > $price) {
+            $shippingPrice = self::SHIPPING_PRICE_LESS_THAN_100;
+        } elseif (100 == $price) {
+            $shippingPrice = self::SHIPPING_PRICE_EQUAL_TO_100;
         } else {
-            $price->sum(self::SHIPPING_PRICE_GREATER_THAN_100);
+            $shippingPrice = self::SHIPPING_PRICE_GREATER_THAN_100;
         }
 
-        return $price->getNumber();
+        return $this->math->sum($price, $shippingPrice);
     }
 }
