@@ -12,7 +12,9 @@ Branche :
 * [Day1/02Math](https://github.com/FabienSalles/training-phpunit/tree/Day1/02Math) : Exercice Math
 * [Day1/03ProductCart](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart) : Exercice ProductCart 1 & 2
 * [Day1/03ProductCart_Step2](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step2) : Exercice ProductCart 3
-* [Day1/03ProductCart_Step3](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step3) : Amélioration : Correction et Utilisation des Mocks
+* [Day1/03ProductCart_Step3](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step3) : Exercice Pricing et Mock
+* [Day1/03ProductCart_Step4](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step4) : Refactoring Math
+* [Day1/03ProductCart_Step5](https://github.com/FabienSalles/training-phpunit/tree/Day1/03ProductCart_Step5) : Mocks de Math
 * [Day1/04Diffbot](https://github.com/FabienSalles/training-phpunit/tree/Day1/04Diffbot) : Initialization du projet Diffbot
 * [Day1/04NumbersAPI](https://github.com/FabienSalles/training-phpunit/tree/Day1/04NumbersAPI) : Dépôt de base avec l'initialisation d'un gestion de dépendance PHP-DI
 * [Day1/04NumbersAPI_2](https://github.com/FabienSalles/training-phpunit/tree/Day1/04NumbersAPI_2) : API de base
