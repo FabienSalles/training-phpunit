@@ -29,7 +29,7 @@ class Math
         return $this;
     }
 
-    public function getNumber() : float
+    public function getNumber(): float
     {
         return $this->number;
     }

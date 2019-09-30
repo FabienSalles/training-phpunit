@@ -1,13 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fsalles
- * Date: 23/06/17
- * Time: 14:43
- */
 
 namespace Training\PHPUnit;
 
+/**
+ * @author Fabien Salles <fsalles@clever-age.com>
+ */
 class Cart
 {
     /** @var  Product[] */
@@ -22,7 +19,7 @@ class Cart
         $this->products = $products;
     }
 
-    public function getProductCartPrices() : float
+    public function getProductCartPrices(): float
     {
         $price = new Math();
 

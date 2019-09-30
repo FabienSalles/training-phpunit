@@ -18,17 +18,17 @@ class ProductTest extends TestCase
     const NAME = 'produit de test';
     const PRICE = 55.90;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->product = new Product(self::NAME, self::PRICE);
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         $this->assertEquals(self::NAME, $this->product->getName());
     }
 
-    public function testGetPrice()
+    public function testGetPrice(): void
     {
         $this->assertSame(self::PRICE, $this->product->getPrice());
     }

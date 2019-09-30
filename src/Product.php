@@ -1,13 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fsalles
- * Date: 23/06/17
- * Time: 14:38
- */
 
 namespace Training\PHPUnit;
 
+/**
+ * @author Fabien Salles <fsalles@clever-age.com>
+ */
 class Product
 {
     private $name;
@@ -20,12 +17,12 @@ class Product
         $this->price = $price;
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getPrice() : float
+    public function getPrice(): float
     {
         return $this->price;
     }
