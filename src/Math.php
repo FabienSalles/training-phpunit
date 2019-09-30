@@ -1,21 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fsalles
- * Date: 22/06/17
- * Time: 17:48
- */
 
 namespace Training\PHPUnit;
 
+/**
+ * @author Fabien Salles <fsalles@clever-age.com>
+ */
 class Math
 {
     /** @var float */
     protected $number;
 
-    /**
-     * Math constructor.
-     **/
     public function __construct(float $number = 0.0)
     {
         $this->number = $number;

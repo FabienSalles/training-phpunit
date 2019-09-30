@@ -1,26 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fsalles
- * Date: 22/06/17
- * Time: 17:52
- */
 
 namespace Training\PHPUnit;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @author Fabien Salles <fsalles@clever-age.com>
+ */
 class MathTest extends TestCase
 {
     /** @var  Math */
     protected $math;
-    
-    public function setUp()
+
+    public function setUp(): void
     {
         $this->math = new Math();
     }
 
-    public function testEmptyNumber()
+    public function testEmptyNumber(): void
     {
         $this->assertSame((float) 0, $this->math->getNumber());
     }
@@ -28,7 +25,7 @@ class MathTest extends TestCase
     /**
      * @dataProvider sumProvider
      */
-    public function testSumNumber(float $firstNum, float $secondNum, float $result)
+    public function testSumNumber(float $firstNum, float $secondNum, float $result): void
     {
         $this->math->sum($firstNum);
         $this->math->sum($secondNum);
@@ -44,21 +41,21 @@ class MathTest extends TestCase
         ];
     }
 
-    public function testSubstractNumber()
+    public function testSubstractNumber(): void
     {
         $this->math->sum(2);
         $this->math->substract(1);
         $this->assertSame((float) 1, $this->math->getNumber());
     }
 
-    public function testDivideNumber()
+    public function testDivideNumber(): void
     {
         $this->math->sum(6);
         $this->math->divide(2);
         $this->assertSame((float) 3, $this->math->getNumber());
     }
 
-    public function testMultiplyNumber()
+    public function testMultiplyNumber(): void
     {
         $this->math->sum(5);
         $this->math->multiply(4);
