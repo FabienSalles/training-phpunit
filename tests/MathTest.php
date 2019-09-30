@@ -43,9 +43,9 @@ class MathTest extends TestCase
 
     public function testDivideNumber(): void
     {
-        $this->math->sum(6);
-        $this->math->divide(2);
-        $this->assertSame((float) 3, $this->math->getNumber());
+        $math = new Math(6);
+        $math->divide(2);
+        $this->assertSame((float) 3, $math->getNumber());
     }
 
     public function testMultiplyNumber(): void
@@ -55,7 +55,7 @@ class MathTest extends TestCase
         $this->assertSame((float) 20, $math->getNumber());
     }
 
-    public function testProductCartPriceWithFloatingPrecision(): float
+    public function testProductCartPriceWithFloatingPrecision(): void
     {
         $math = new Math(80.1);
         $math->sum(10.1);

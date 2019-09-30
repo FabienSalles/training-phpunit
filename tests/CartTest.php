@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
-    public function testGetProductCartPrice()
+    public function testGetProductCartPrice(): void
     {
         $cart = new Cart([
             new Product('un produit', 10.90),
